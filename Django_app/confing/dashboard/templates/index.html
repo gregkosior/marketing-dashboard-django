@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Marketing Dashboard</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<header>
+    <h1>📊 Marketing Performance Dashboard</h1>
+    <p>Analiza danych kampanii e-commerce</p>
+</header>
+<main>
+    <section class="cards">
+        <div class="card">
+            <h3>💰 Revenue</h3>
+            <p id="revenue">—</p>
+        </div>
+        <div class="card">
+            <h3>📉 Cost</h3>
+            <p id="cost">—</p>
+        </div>
+        <div class="card">
+            <h3>📈 Profit (PnL)</h3>
+            <p id="pandl">—</p>
+        </div>
+    </section>
+    <section class="table-section">
+        <h2>📌 Wynik wg grup reklam</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ad Group</th>
+                    <th>PnL</th>
+                </tr>
+            </thead>
+            <tbody id="group-table"></tbody>
+        </table>
+    </section>
+    <section class="api-section">
+        <h2>API Endpoints</h2>
+        <ul>
+          <li><a href="/api/summary" target="_blank">Podsumowanie (summary)</a></li>
+          <li><a href="/api/group" target="_blank">Grupowanie (group)</a></li>
+        </ul>
+    </section>
+</main>
+<script src="{% static 'app.js' %}"></script>
+</body>
+</html>
